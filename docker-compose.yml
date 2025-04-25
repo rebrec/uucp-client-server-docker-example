@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  uucp-server:
+    image: jgoerzen/uucp
+    container_name: uucp-server
+    hostname: thames
+    networks:
+      uucpnet:
+        ipv4_address: 172.28.0.2
+    volumes:
+      - ./server/etc-uucp:/etc/uucp
+    command: tail -f /dev/null
+
+  uucp-client:
+    image: jgoerzen/uucp
+    container_name: uucp-client
+    hostname: london
+    networks:
+      uucpnet:
+        ipv4_address: 172.28.0.3
+    volumes:
+      - ./client/etc-uucp:/etc/uucp
+    command: tail -f /dev/null
+
+networks:
+  uucpnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+

@@ -1,0 +1,9 @@
+nodename	thames
+
+spool /var/spool/uucp                   # The UUCP spool directory
+pubdir /var/spool/uucppublic            # The UUCP public directory
+logfile /var/log/uucp/log               # The UUCP log file
+statfile /var/log/uucp/stats            # The UUCP statistics file
+debugfile /var/log/uucp/debug           # The UUCP debugging file
+
+debug 9

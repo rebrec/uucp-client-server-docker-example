@@ -1,0 +1,5 @@
+MACHINE=london LOGNAME=fox \
+	   COMMANDS=pwsh:ls:nc:cat:ping \
+           READ=/usr/spool/uucppublic:/usr/tmp \
+           WRITE=/usr/spool/uucppublic:/usr/tmp \
+           SENDFILES=yes REQUEST=yes
