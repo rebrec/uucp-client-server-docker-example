@@ -1,0 +1,18 @@
+#protocol gvG
+#protocol-parameter G packet-size 1024
+#protocol-parameter G short-packets
+
+system thames
+address 10.0.1.7
+#address 172.28.0.2
+call-login *
+call-password *
+#time any
+### Directory on the remote system for file transfer
+#local-send /
+#local-receive /usr/spool/uucppublic
+#remote-send /
+#remote-receive /usr/spool/uucppublic
+#
+port TCP
+protocol t
